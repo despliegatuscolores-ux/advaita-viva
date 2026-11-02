@@ -67,51 +67,6 @@ Guía interactiva basada en el método analítico de Śrī Śaṅkarācārya:
 
 ---
 
-## 🏛️ Arquitectura Técnica
-
-Diseñado bajo la filosofía de cero dependencias para garantizar portabilidad absoluta, carga inmediata y longevidad:
-
-| Capa | Implementación | Propósito |
-|---|---|---|
-| **Estructura** | HTML5 Semántico Puro | Accesibilidad integral y carga sin intermediarios. |
-| **Estética Abisal** | Tailwind CSS CDN + Variables CSS | Noche abisal (`#05070f`, `#0c1220`), oro estelar (`#dfb259`, `#e6c678`), blanco perla (`#f5f7fc`) y azul etéreo (`#60a5fa`). |
-| **Tipografía** | Cinzel + Cormorant Garamond + Inter | Equilibrio entre rigor ceremonial, calidez contemplativa y alta legibilidad. |
-| **Motor de Audio** | Web Audio API Pura | Osciladores senoidales matemáticos para el dron de 108 Hz y síntesis acústica de cuenco de cuarzo en tiempo real. |
-| **Persistencia** | Web Storage API (`localStorage`) | Datos 100% aislados en el navegador del usuario. Cero rastreadores, cero cookies de terceros y cero analíticas. |
-
----
-
-## 🚀 Puesta en Marcha
-
-### Uso Local Inmediato
-No requiere Node.js, npm, compilación ni configuración de servidor:
-
-```bash
-# 1. Clonar el repositorio
-git clone https://github.com/<tu-usuario>/advaita-viva.git
-
-# 2. Entrar en la carpeta
-cd advaita-viva
-
-# 3. Abrir en cualquier navegador moderno
-open index.html        # macOS
-xdg-open index.html    # Linux
-start index.html       # Windows
-```
-
-### Despliegue en GitHub Pages (Gratis y Permanente)
-
-1. En tu cuenta de GitHub, crea un nuevo repositorio llamado `advaita-viva`.
-2. Sube el archivo de la aplicación como `index.html` en la raíz del repositorio, junto con este `README.md` y el archivo de licencia `LICENSE`.
-3. Ve a **Settings > Pages**.
-4. En **Build and deployment > Branch**, selecciona la rama `main` (o `master`) y la carpeta `/ (root)`.
-5. Haz clic en **Save**. En un par de minutos tu aplicación estará publicada globalmente en:
-   ```text
-   https://<tu-usuario>.github.io/advaita-viva/
-   ```
-
----
-
 ## 🌌 La Hexalogía Contemplativa Completa
 
 Este proyecto representa el sexto y último volumen del mapa contemplativo integral de la consciencia humana:
