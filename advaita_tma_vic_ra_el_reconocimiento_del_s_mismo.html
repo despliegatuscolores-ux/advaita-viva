@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADVAITA · ĀTMA-VICĀRA | El Reconocimiento del Sí Mismo (आत्मविचार)</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond e Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            cinzel: ['Cinzel', 'Georgia', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            void: {
+              950: '#03050a',
+              900: '#05070f',
+              850: '#0c1220',
+              800: '#141c30',
+              700: '#1e2945',
+              600: '#2d3b5e',
+            },
+            stellar: {
+              300: '#f5e2b3',
+              400: '#e6c678',
+              500: '#dfb259',
+              600: '#c5953b',
+              700: '#9b7125',
+            },
+            ether: {
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              900: '#1e3a8a',
+            },
+            pearl: {
+              50: '#ffffff',
+              100: '#f5f7fc',
+              200: '#e4ebf7',
+              300: '#ccd5e8',
+              400: '#a3b1cc',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+    }
+
+    body {
+      background-color: #05070f;
+      color: #f5f7fc;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .advaita-card {
+      background: linear-gradient(145deg, rgba(12, 18, 32, 0.94) 0%, rgba(5, 7, 15, 0.96) 100%);
+      border: 1px solid rgba(223, 178, 89, 0.22);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(96, 165, 250, 0.04);
+      backdrop-filter: blur(16px);
+    }
+
+    .tab-active {
+      background: linear-gradient(135deg, rgba(223, 178, 89, 0.22) 0%, rgba(96, 165, 250, 0.18) 100%) !important;
+      border-color: rgba(223, 178, 89, 0.6) !important;
+      color: #e6c678 !important;
+      box-shadow: 0 0 20px rgba(223, 178, 89, 0.25);
+    }
+
+    .witness-glow {
+      box-shadow: 0 0 45px rgba(223, 178, 89, 0.25), inset 0 0 30px rgba(96, 165, 250, 0.15);
+    }
+
+    @keyframes dissolveThought {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0px);
+      }
+      50% {
+        transform: scale(0.97) translateY(-6px);
+        opacity: 0.5;
+        filter: blur(3px) brightness(1.5);
+      }
+      100% {
+        transform: scale(0.92) translateY(-16px);
+        opacity: 0;
+        filter: blur(10px);
+      }
+    }
+
+    .thought-dissolving {
+      animation: dissolveThought 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    /* Scrollbar sutil azul índigo y oro */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #05070f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(223, 178, 89, 0.3);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(223, 178, 89, 0.6);
+    }
+  </style>
+</head>
+<body class="min-h-full flex flex-col antialiased selection:bg-stellar-500/30 selection:text-stellar-300">
+
+  <!-- ================= NOTIFICACIÓN TOAST SUTIL ================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-void-850 text-pearl-100 border border-stellar-500/40 px-5 py-3 rounded-2xl shadow-2xl text-xs font-medium flex items-center space-x-3 shadow-stellar-500/10">
+    <span id="toast-icon" class="text-base">👁️</span>
+    <span id="toast-msg">Reconocimiento del Vidente</span>
+  </div>
+
+  <!-- ================= ENCABEZADO Y SELECTOR DE HEXALOGÍA ================= -->
+  <header class="border-b border-void-800 bg-void-950/95 backdrop-blur-md sticky top-0 z-40">
+    
+    <!-- Barra Superior: Hexalogía Contemplativa -->
+    <div class="border-b border-void-800/80 bg-void-900/90 py-1.5 px-4 text-center">
+      <div class="max-w-6xl mx-auto flex items-center justify-between text-[11px] font-cinzel text-pearl-300 tracking-wider">
+        <span class="hidden md:inline text-pearl-400 font-semibold">Hexalogía Contemplativa</span>
+        <div class="flex items-center space-x-2 sm:space-x-3 mx-auto md:mx-0 overflow-x-auto no-scrollbar py-0.5">
+          <a href="../sutra-yoga/" class="opacity-60 hover:opacity-100 hover:text-stellar-400 transition whitespace-nowrap">
+            Vol. I · Yoga
+          </a>
+          <span class="text-void-700">✦</span>
+          <a href="../sutra-dharma/" class="opacity-60 hover:opacity-100 hover:text-stellar-400 transition whitespace-nowrap">
+            Vol. II · Dharma
+          </a>
+          <span class="text-void-700">✦</span>
+          <a href="../tantra-viva/" class="opacity-60 hover:opacity-100 hover:text-stellar-400 transition whitespace-nowrap">
+            Vol. III · Tantra
+          </a>
+          <span class="text-void-700">✦</span>
+          <a href="../bhakti-viva/" class="opacity-60 hover:opacity-100 hover:text-stellar-400 transition whitespace-nowrap">
+            Vol. IV · Bhakti
+          </a>
+          <span class="text-void-700">✦</span>
+          <a href="../tao-viva/" class="opacity-60 hover:opacity-100 hover:text-stellar-400 transition whitespace-nowrap">
+            Vol. V · Tao
+          </a>
+          <span class="text-void-700">✦</span>
+          <span class="text-stellar-400 font-bold border-b border-stellar-400 pb-0.5 whitespace-nowrap flex items-center space-x-1">
+            <span>Vol. VI · Advaita</span>
+          </span>
+        </div>
+        <span class="hidden md:inline text-ether-400/90 text-[10px]">Ahaṁ Brahmāsmi</span>
+      </div>
+    </div>
+
+    <!-- Barra Principal -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
+      
+      <!-- Marca / Logotipo -->
+      <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="switchTab('daily')">
+        <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-void-800 via-void-850 to-void-700 border border-stellar-500/40 flex items-center justify-center text-stellar-400 font-cinzel text-lg shadow-lg">
+          👁️
+        </div>
+        <div>
+          <span class="font-cinzel tracking-widest text-base sm:text-lg font-bold text-pearl-100 block leading-tight">ADVAITA</span>
+          <span class="text-[9px] sm:text-[10px] tracking-widest uppercase text-stellar-400 font-medium">Ātma-Vicāra (आत्मविचार)</span>
+        </div>
+      </div>
+
+      <!-- Menú Desktop Píldoras -->
+      <nav class="hidden lg:flex items-center space-x-1 text-xs font-semibold tracking-wider uppercase font-cinzel">
+        <button onclick="switchTab('daily')" id="nav-daily" class="nav-btn px-3 py-2 rounded-xl text-pearl-300 hover:text-stellar-400 border border-transparent transition">
+          Puntero Vivo
+        </button>
+        <button onclick="switchTab('vicara')" id="nav-vicara" class="nav-btn px-3 py-2 rounded-xl text-pearl-300 hover:text-stellar-400 border border-transparent transition">
+          Ātma-Vicāra
+        </button>
+        <button onclick="switchTab('drg-drsya')" id="nav-drg-drsya" class="nav-btn px-3 py-2 rounded-xl text-pearl-300 hover:text-stellar-400 border border-transparent transition">
+          Dṛg-Dṛśya
+        </button>
+        <button onclick="switchTab('timer')" id="nav-timer" class="nav-btn px-3 py-2 rounded-xl text-pearl-300 hover:text-stellar-400 border border-transparent transition">
+          Reposo Silente
+        </button>
+        <button onclick="switchTab('journal')" id="nav-journal" class="nav-btn px-3 py-2 rounded-xl text-pearl-300 hover:text-stellar-400 border border-transparent transition">
+          Sākṣī Patra
+        </button>
+        <button onclick="switchTab('compendium')" id="nav-compendium" class="nav-btn px-3 py-2 rounded-xl text-pearl-300 hover:text-stellar-400 border border-transparent transition">
+          Compendio
+        </button>
+      </nav>
+
+      <!-- Contador de Chispas & Dron 108 Hz -->
+      <div class="flex items-center space-x-2 sm:space-x-3 shrink-0">
+        <!-- Chispas del Reconocimiento -->
+        <div class="flex items-center space-x-1.5 bg-void-850 border border-stellar-500/30 px-3 py-1.5 rounded-full text-xs" title="Chispas de reconocimiento despierto">
+          <span class="text-stellar-400 animate-pulse">👁️</span>
+          <span class="font-semibold text-pearl-200" id="streak-counter">0 chispas</span>
+        </div>
+
+        <!-- Botón Dron 108 Hz Procedural -->
+        <button onclick="toggleHarmonicDrone()" id="drone-btn" class="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-stellar-500/40 bg-void-850 hover:bg-stellar-500/10 text-stellar-300 text-xs font-cinzel flex items-center space-x-1.5 transition" title="Activar/Pausar Dron Armónico 108 Hz">
+          <span id="drone-icon">🪷</span>
+          <span class="hidden sm:inline" id="drone-btn-text">Dron 108Hz</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Menú Móvil con desplazamiento horizontal -->
+    <div class="flex lg:hidden overflow-x-auto px-4 py-2 space-x-2 border-t border-void-800 text-xs uppercase font-cinzel font-semibold no-scrollbar">
+      <button onclick="switchTab('daily')" id="mob-nav-daily" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-void-850 border border-transparent">Puntero</button>
+      <button onclick="switchTab('vicara')" id="mob-nav-vicara" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-void-850 border border-transparent">Ātma-Vicāra</button>
+      <button onclick="switchTab('drg-drsya')" id="mob-nav-drg-drsya" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-void-850 border border-transparent">Dṛg-Dṛśya</button>
+      <button onclick="switchTab('timer')" id="mob-nav-timer" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-void-850 border border-transparent">Silencio</button>
+      <button onclick="switchTab('journal')" id="mob-nav-journal" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-void-850 border border-transparent">Diario</button>
+      <button onclick="switchTab('compendium')" id="mob-nav-compendium" class="whitespace-nowrap px-3 py-1.5 rounded-lg bg-void-850 border border-transparent">Compendio</button>
+    </div>
+  </header>
+
+  <!-- ================= CONTENEDOR PRINCIPAL ================= -->
+  <main class="flex-1 max-w-5xl mx-auto w-full px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- ================= SECCIÓN 1: EL PUNTERO VIVO ================= -->
+    <section id="view-daily" class="view-content space-y-8">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs uppercase tracking-widest text-stellar-400 font-cinzel font-bold">La Flecha hacia el Sí Mismo</span>
+        <h1 class="text-3xl sm:text-4xl font-serif font-bold text-pearl-100">Tú Eres Eso (Tat Tvam Asi)</h1>
+        <p class="text-sm text-pearl-300">
+          No hay nada que alcanzar, crear o purificar en la Consciencia. El Vidente no es un objeto que deba buscarse: es la Luz previa en la que surge toda búsqueda.
+        </p>
+      </div>
+
+      <!-- Tarjeta del Aforismo / Puntero Activo -->
+      <div class="advaita-card rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        
+        <div class="flex items-center justify-between border-b border-void-700/80 pb-4 mb-6">
+          <div class="flex items-center space-x-2">
+            <span class="px-2.5 py-1 rounded-md text-xs font-cinzel font-bold bg-void-800 border border-stellar-500/40 text-stellar-300" id="daily-source-tag">
+              Chāndogya Upaniṣad 6.8.7
+            </span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-ether-400" id="daily-type-tag">
+              Mahāvākya Supremo
+            </span>
+          </div>
+
+          <button onclick="pickRandomPointer()" class="text-xs text-pearl-200 hover:text-stellar-300 flex items-center space-x-1.5 bg-void-800/80 px-3 py-1.5 rounded-xl border border-void-700 hover:border-stellar-500/40 transition" title="Inspirar otro puntero">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <span>Inspirar otro</span>
+          </button>
+        </div>
+
+        <!-- Verso en Sánscrito / Transliteración / Traducción -->
+        <div class="space-y-4 text-center my-6">
+          <div class="text-2xl sm:text-3xl font-serif text-pearl-100 tracking-wide italic font-normal" id="daily-sanskrit">
+            tat tvam asi |
+          </div>
+          <div class="text-xs tracking-widest text-stellar-400 font-mono" id="daily-phonetic">
+            [ tat tvam asi · Tú eres Eso ]
+          </div>
+          <div class="text-xl sm:text-2xl font-serif text-stellar-300 font-semibold max-w-2xl mx-auto pt-2 leading-relaxed" id="daily-translation">
+            «Aquello que es la Realidad Suprema y el fundamento invisible de todo cuanto existe: Eso eres tú.»
+          </div>
+        </div>
+
+        <!-- Flecha de la Indagación y Micro-Práctica -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6 border-t border-void-700/80">
+          
+          <div class="bg-void-850/80 p-5 rounded-2xl border border-void-700">
+            <h4 class="text-xs font-bold tracking-widest uppercase text-stellar-400 font-cinzel flex items-center space-x-2 mb-2">
+              <span>🏹</span>
+              <span>La Flecha de la Indagación</span>
+            </h4>
+            <p class="text-sm leading-relaxed text-pearl-200" id="daily-insight">
+              No busques a Dios fuera ni intentes convertirte en alguien especial. El cuerpo y la mente cambian sin cesar; tú eres el Espacio Consciente e inmutable en el que ocurren.
+            </p>
+          </div>
+
+          <div class="bg-void-850/80 p-5 rounded-2xl border border-ether-900/60">
+            <h4 class="text-xs font-bold tracking-widest uppercase text-ether-300 font-cinzel flex items-center space-x-2 mb-2">
+              <span>💎</span>
+              <span>Micro-Práctica de No-Identificación</span>
+            </h4>
+            <p class="text-sm leading-relaxed text-pearl-200" id="daily-practice">
+              Cierra los ojos durante 30 segundos. Pregúntate: «¿Quién es consciente del parloteo mental ahora mismo?». Permanece en el silencio que atestigua, sin añadir una sola palabra.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+          <button id="btn-mark-recognized" onclick="markRecognizedToday()" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-stellar-600 via-stellar-500 to-amber-600 hover:from-stellar-500 hover:to-amber-500 text-void-950 font-cinzel font-bold text-xs tracking-wider flex items-center justify-center space-x-2 shadow-lg transition">
+            <span class="text-base">👁️</span>
+            <span id="btn-recognized-text">He reconocido mi naturaleza hoy</span>
+          </button>
+
+          <div class="flex items-center space-x-3 w-full sm:w-auto">
+            <button onclick="openNoteModal()" class="w-full sm:w-auto px-4 py-3 rounded-2xl border border-stellar-500/30 bg-void-850 hover:bg-void-800 text-xs font-cinzel tracking-wider font-semibold text-pearl-200 flex items-center justify-center space-x-2">
+              <span>✍️</span>
+              <span>Anotar al Testigo</span>
+            </button>
+            <button onclick="sharePointerText()" class="px-4 py-3 rounded-2xl border border-void-700 bg-void-850 hover:bg-void-800 text-xs text-pearl-300 flex items-center justify-center" title="Copiar puntero al portapapeles">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Los Tres Postulados del Advaita (Śaṅkara) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+        <div class="p-5 rounded-2xl advaita-card">
+          <div class="text-stellar-400 font-cinzel text-lg font-bold mb-1">Brahma Satyam</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-pearl-400 mb-1">Solo Brahman es Real</div>
+          <p class="text-xs text-pearl-300">La Consciencia pura es el único sustrato permanente, eterno e inafectado por el tiempo.</p>
+        </div>
+        <div class="p-5 rounded-2xl advaita-card">
+          <div class="text-stellar-400 font-cinzel text-lg font-bold mb-1">Jagan Mithyā</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-pearl-400 mb-1">El Mundo es Aparente</div>
+          <p class="text-xs text-pearl-300">Las formas, nombres y objetos son proyecciones pasajeras: olas sobre el mismo océano.</p>
+        </div>
+        <div class="p-5 rounded-2xl advaita-card">
+          <div class="text-stellar-400 font-cinzel text-lg font-bold mb-1">Jīvo Brahmaiva</div>
+          <div class="text-xs font-bold uppercase tracking-wider text-pearl-400 mb-1">El Ser es lo Supremo</div>
+          <p class="text-xs text-pearl-300">Tú no eres una criatura separada de Dios: en tu raíz misma, eres la Totalidad despierta.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 2: LABORATORIO DE AUTO-INDAGACIÓN (ĀTMA-VICĀRA) ================= -->
+    <section id="view-vicara" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-stellar-400 font-cinzel font-bold">Bhagavān Ramana Maharshi</span>
+        <h2 class="text-3xl font-serif font-bold text-pearl-100">Laboratorio de Auto-Indagación</h2>
+        <p class="text-sm text-pearl-300">
+          No luches contra tus pensamientos ni intentes silenciarlos a la fuerza. Gira la flecha de la atención hacia el origen: «¿A quién le ocurre esto? ¿Quién soy yo?».
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto advaita-card rounded-3xl p-6 sm:p-8 space-y-6">
+        
+        <!-- Indicador de Etapas -->
+        <div class="grid grid-cols-3 gap-2 border-b border-void-700 pb-4">
+          <button onclick="setVicaraStep(1)" id="vicara-step-btn-1" class="py-2 text-xs font-cinzel font-bold border-b-2 border-stellar-500 text-stellar-300">
+            1. El Objeto
+          </button>
+          <button onclick="setVicaraStep(2)" id="vicara-step-btn-2" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400">
+            2. El Giro
+          </button>
+          <button onclick="setVicaraStep(3)" id="vicara-step-btn-3" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400">
+            3. La Fuente Silente
+          </button>
+        </div>
+
+        <!-- Etapa 1: Nombrar el Objeto Mental -->
+        <div id="vicara-step-1" class="space-y-4">
+          <div class="border-l-4 border-ether-400 pl-4 py-1">
+            <h3 class="font-bold text-base text-pearl-100">Etapa 1: ¿Qué pensamiento, temor o problema absorbe tu atención?</h3>
+            <p class="text-xs text-pearl-400">Escribe aquello que tu mente presenta como urgente, doloroso o incompleto.</p>
+          </div>
+
+          <textarea id="vicara-thought-input" rows="4" class="w-full bg-void-850 border border-void-700 rounded-2xl p-4 text-sm text-pearl-100 placeholder-pearl-400 focus:outline-none focus:border-stellar-500 resize-none" placeholder="Ejemplo: Me siento angustiado por si voy a decepcionar a mi familia con esta decisión y mi mente no para de buscar escenarios futuros..."></textarea>
+
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="text-pearl-400 self-center">Objetos recurrentes:</span>
+            <button onclick="setThoughtPreset('Temor intenso al futuro y a la falta de seguridad material')" class="px-2.5 py-1 bg-void-800 rounded-lg text-pearl-300 hover:text-stellar-300">Miedo al futuro</button>
+            <button onclick="setThoughtPreset('Resentimiento por haber sido juzgado injustamente por otros')" class="px-2.5 py-1 bg-void-800 rounded-lg text-pearl-300 hover:text-stellar-300">Herida egóica</button>
+            <button onclick="setThoughtPreset('Sensación íntima de insuficiencia: siento que me falta algo')" class="px-2.5 py-1 bg-void-800 rounded-lg text-pearl-300 hover:text-stellar-300">Insuficiencia</button>
+          </div>
+
+          <div class="flex justify-end pt-3">
+            <button onclick="goToVicaraStep2()" class="px-6 py-2.5 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">
+              Girar la Flecha de la Atención →
+            </button>
+          </div>
+        </div>
+
+        <!-- Etapa 2: La Flecha que se Gira -->
+        <div id="vicara-step-2" class="space-y-6 hidden text-center">
+          
+          <div class="border-l-4 border-stellar-500 pl-4 py-1 text-left">
+            <h3 class="font-bold text-base text-pearl-100">Etapa 2: ¿A quién le surge este pensamiento?</h3>
+            <p class="text-xs text-pearl-400">No respondas con teoría. Sigue el rastro del Vidente.</p>
+          </div>
+
+          <div class="p-5 bg-void-850 rounded-2xl border border-stellar-500/30 max-w-lg mx-auto space-y-4">
+            <div class="text-xs uppercase font-cinzel text-pearl-400">Pensamiento Observado:</div>
+            <div id="vicara-observed-text" class="font-serif italic text-base text-pearl-200">
+              «Pensamiento...»
+            </div>
+
+            <div class="py-2 border-t border-void-700/80 space-y-3">
+              <div class="text-xs text-stellar-400 font-cinzel font-semibold">
+                Pregúntate en tu fuero interno:
+              </div>
+              <div class="text-lg font-serif italic text-pearl-100">
+                «¿A quién le surge esta angustia o inquietud?»
+              </div>
+              <div class="text-xs text-pearl-300">
+                La respuesta natural inmediata es: <strong>«A MÍ»</strong>.
+              </div>
+              <div class="text-lg font-serif text-stellar-300 font-semibold pt-1">
+                «Entonces... ¿QUIÉN SOY YO?»
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs text-pearl-300 max-w-md mx-auto">
+            No intentes responder con palabras. Deja que la mente se hunda en el silencio de donde brotó el primer pensamiento de 'yo'.
+          </p>
+
+          <div class="flex items-center justify-between pt-2">
+            <button onclick="setVicaraStep(1)" class="px-4 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300">
+              ← Atrás
+            </button>
+            <button onclick="goToVicaraStep3()" class="px-6 py-2.5 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">
+              Disolver el Relato en la Fuente →
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Etapa 3: El Silencio Previo y Colapso -->
+        <div id="vicara-step-3" class="space-y-6 hidden text-center">
+          
+          <div class="relative w-48 h-48 mx-auto my-2 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-stellar-500/20 to-ether-500/20 blur-2xl animate-pulse"></div>
+            
+            <div class="w-36 h-36 rounded-full bg-void-850 border border-stellar-400/40 flex flex-col items-center justify-center p-4 relative shadow-2xl">
+              <span class="text-4xl">👁️</span>
+              <span class="text-[9px] font-cinzel text-stellar-400 font-bold tracking-widest uppercase mt-2">Sākṣin Puro</span>
+            </div>
+          </div>
+
+          <div class="max-w-md mx-auto space-y-2">
+            <h3 class="font-cinzel text-base font-bold text-stellar-300">El 'Yo' que Sufría se Disuelve</h3>
+            <p class="text-xs text-pearl-300 leading-relaxed">
+              El problema pertenecía a una imagen mental con la que te habías identificado. Al buscar al dueño del dolor, no encuentras ninguna entidad fija: solo encuentras la Presencia Despierta que lo ilumina todo.
+            </p>
+          </div>
+
+          <div class="bg-void-850 p-4 rounded-2xl border border-stellar-500/30 max-w-md mx-auto text-xs text-pearl-200 italic font-serif">
+            «Tú no eres el relato. Eres el Espacio en el que el relato aparece y desaparece.»
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-3">
+            <button onclick="saveVicaraEntryToJournal()" class="w-full sm:w-auto px-6 py-2.5 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider shadow-lg">
+              📜 Registrar en el Sākṣī Patra
+            </button>
+            <button onclick="resetVicara()" class="px-4 py-2.5 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300 hover:text-stellar-400">
+              Nueva Indagación
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 3: DṚG-DṚŚYA-VIVEKA (EL VIDENTE Y LO VISTO) ================= -->
+    <section id="view-drg-drsya" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-stellar-400 font-cinzel font-bold">Śrī Śaṅkarācārya · Dṛg-Dṛśya-Viveka</span>
+        <h2 class="text-3xl font-serif font-bold text-pearl-100">Discriminación: Lo Visto vs. El Vidente</h2>
+        <p class="text-sm text-pearl-300">
+          «La forma es vista, el ojo es el vidente. El ojo es visto, la mente es el vidente. La mente es vista, y el Testigo último es sólo Vidente, jamás visto.»
+        </p>
+      </div>
+
+      <div class="max-w-2xl mx-auto advaita-card rounded-3xl p-6 sm:p-10 space-y-8">
+        
+        <!-- Pasos del Descarte Neti-Neti -->
+        <div class="grid grid-cols-4 gap-2 text-center border-b border-void-700 pb-4">
+          <button onclick="setVivekaStep(1)" id="viv-tab-1" class="py-2 text-xs font-cinzel font-bold border-b-2 border-stellar-500 text-stellar-300">
+            1. Cuerpo
+          </button>
+          <button onclick="setVivekaStep(2)" id="viv-tab-2" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400">
+            2. Sentidos
+          </button>
+          <button onclick="setVivekaStep(3)" id="viv-tab-3" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400">
+            3. Mente
+          </button>
+          <button onclick="setVivekaStep(4)" id="viv-tab-4" class="py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400">
+            4. El Testigo
+          </button>
+        </div>
+
+        <!-- Contenido Dinámico de los Pasos -->
+        <div id="viveka-content-box" class="space-y-4">
+          <!-- Paso 1 -->
+          <div id="viv-pane-1" class="space-y-4">
+            <div class="border-l-4 border-stellar-500 pl-4 py-1">
+              <h3 class="font-bold text-base text-pearl-100">1. El Cuerpo Físico es un Objeto Percibido</h3>
+              <p class="text-xs text-pearl-400">Regla: El sujeto no puede ser idéntico al objeto que percibe.</p>
+            </div>
+            <p class="text-sm text-pearl-200 leading-relaxed">
+              Percibes el peso de tus piernas, la temperatura de tus manos y el latido del corazón. Puedes observar tu cuerpo como observas un mueble o una piedra. Si puedes observarlo, tú eres quien lo atestigua: <strong>Tú no eres el cuerpo físico</strong>.
+            </p>
+            <div class="p-3 bg-void-850 rounded-xl border border-void-700 text-xs font-cinzel text-stellar-400">
+              Neti Neti: «Esto no soy yo».
+            </div>
+            <div class="flex justify-end pt-2">
+              <button onclick="setVivekaStep(2)" class="px-5 py-2 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">
+                Avanzar a las Sensaciones →
+              </button>
+            </div>
+          </div>
+
+          <!-- Paso 2 -->
+          <div id="viv-pane-2" class="space-y-4 hidden">
+            <div class="border-l-4 border-stellar-500 pl-4 py-1">
+              <h3 class="font-bold text-base text-pearl-100">2. Las Sensaciones y el Aliento van y vienen</h3>
+              <p class="text-xs text-pearl-400">Regla: Lo transitorio no puede ser la identidad eterna.</p>
+            </div>
+            <p class="text-sm text-pearl-200 leading-relaxed">
+              El dolor de cabeza aparece y luego desaparece. La respiración se acelera y se aquieta. La sensación de hambre surge, dura una hora y se esfuma. Aquello que atestigua el ir y venir de las sensaciones no sufre alteración: <strong>Tú no eres las sensaciones</strong>.
+            </p>
+            <div class="p-3 bg-void-850 rounded-xl border border-void-700 text-xs font-cinzel text-stellar-400">
+              Neti Neti: «Tampoco soy la marea de sensaciones».
+            </div>
+            <div class="flex justify-between pt-2">
+              <button onclick="setVivekaStep(1)" class="px-4 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300">← Atrás</button>
+              <button onclick="setVivekaStep(3)" class="px-5 py-2 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">Avanzar a la Mente →</button>
+            </div>
+          </div>
+
+          <!-- Paso 3 -->
+          <div id="viv-pane-3" class="space-y-4 hidden">
+            <div class="border-l-4 border-stellar-500 pl-4 py-1">
+              <h3 class="font-bold text-base text-pearl-100">3. Los Pensamientos y Emociones son Fenómenos Mentales</h3>
+              <p class="text-xs text-pearl-400">Regla: El espectador no se ahoga cuando en la pantalla arde una casa.</p>
+            </div>
+            <p class="text-sm text-pearl-200 leading-relaxed">
+              Puedes ver un recuerdo de la infancia, una idea brillante o un pensamiento oscuro. Ves cómo surge un ataque de ira y cómo se apaga diez minutos más tarde. Si puedes ver tus propios pensamientos, tú eres la Consciencia que los ilumina: <strong>Tú no eres tus pensamientos ni tus emociones</strong>.
+            </p>
+            <div class="p-3 bg-void-850 rounded-xl border border-void-700 text-xs font-cinzel text-stellar-400">
+              Neti Neti: «No soy el diálogo mental ni la memoria».
+            </div>
+            <div class="flex justify-between pt-2">
+              <button onclick="setVivekaStep(2)" class="px-4 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300">← Atrás</button>
+              <button onclick="setVivekaStep(4)" class="px-5 py-2 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">El Reconocimiento Final →</button>
+            </div>
+          </div>
+
+          <!-- Paso 4 -->
+          <div id="viv-pane-4" class="space-y-4 hidden">
+            <div class="border-l-4 border-stellar-400 pl-4 py-1">
+              <h3 class="font-bold text-base text-pearl-100">4. Solo queda el Vidente Puro (Sākṣin / Brahman)</h3>
+              <p class="text-xs text-pearl-400">La Consciencia Luminosa que jamás puede ser convertida en objeto.</p>
+            </div>
+            <p class="text-sm text-pearl-200 leading-relaxed">
+              Habiendo descartado el cuerpo, las sensaciones y el parloteo del ego: ¿qué queda? Queda el **Darse Cuenta Puro**. No tiene forma, no tiene edad, no puede enfermar y nunca nació. Reposa en esa quietud primordial que ya eres.
+            </p>
+            <div class="p-4 bg-void-850 rounded-xl border border-stellar-500/40 text-xs font-serif italic text-stellar-300">
+              «Dṛk-svarūpa: Yo soy la pura naturaleza del Vidente, inmutable y libre.»
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3">
+              <button onclick="setVivekaStep(3)" class="w-full sm:w-auto px-4 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300">← Atrás</button>
+              <button onclick="saveVivekaToJournal()" class="w-full sm:w-auto px-6 py-2.5 bg-gradient-to-r from-stellar-600 to-amber-600 hover:from-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider shadow-lg">
+                Consagrar Reconocimiento en el Diario
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 4: EL REPOSO EN LA FUENTE (TEMPORIZADOR Y DRON 108 HZ) ================= -->
+    <section id="view-timer" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-stellar-400 font-cinzel font-bold">Sahaja Samādhi · El Silencio Consciente</span>
+        <h2 class="text-3xl font-serif font-bold text-pearl-100">El Reposo en la Fuente</h2>
+        <p class="text-sm text-pearl-300">
+          Un espacio desprovisto de esfuerzo técnico. Permite que el cuerpo repose inmóvil y deja que la atención se sumerja en la vibración del silencio.
+        </p>
+      </div>
+
+      <div class="max-w-xl mx-auto advaita-card rounded-3xl p-6 sm:p-10 text-center relative space-y-6">
+        
+        <!-- Selectores de Duración -->
+        <div class="flex justify-center flex-wrap gap-2 text-xs font-cinzel">
+          <button onclick="setSilenceDuration(3)" id="timer-btn-3" class="timer-pill px-3 py-1.5 rounded-full border border-void-700 text-pearl-300 hover:border-stellar-400">3 min</button>
+          <button onclick="setSilenceDuration(5)" id="timer-btn-5" class="timer-pill px-3 py-1.5 rounded-full border border-stellar-500 bg-stellar-500/20 text-stellar-300 font-bold">5 min</button>
+          <button onclick="setSilenceDuration(10)" id="timer-btn-10" class="timer-pill px-3 py-1.5 rounded-full border border-void-700 text-pearl-300 hover:border-stellar-400">10 min</button>
+          <button onclick="setSilenceDuration(15)" id="timer-btn-15" class="timer-pill px-3 py-1.5 rounded-full border border-void-700 text-pearl-300 hover:border-stellar-400">15 min</button>
+          <button onclick="setSilenceDuration(20)" id="timer-btn-20" class="timer-pill px-3 py-1.5 rounded-full border border-void-700 text-pearl-300 hover:border-stellar-400">20 min</button>
+        </div>
+
+        <!-- Círculo Visual del Silencio -->
+        <div class="relative w-64 h-64 mx-auto my-2 flex items-center justify-center">
+          <div id="silence-aura" class="absolute inset-0 rounded-full bg-stellar-500/10 blur-2xl transition-all duration-1000"></div>
+          
+          <div id="silence-orb" class="relative z-10 w-48 h-48 rounded-full bg-gradient-to-tr from-void-950 via-void-900 to-void-850 border border-stellar-400/40 flex flex-col items-center justify-center text-pearl-100 shadow-2xl transition-transform duration-1000">
+            <span id="timer-display" class="text-4xl font-serif font-bold text-pearl-100">05:00</span>
+            <span id="timer-state-label" class="text-[10px] font-cinzel text-stellar-400 uppercase tracking-widest mt-1">En Reposo</span>
+          </div>
+        </div>
+
+        <div class="space-y-1">
+          <div id="silence-quote" class="text-xs text-pearl-300 italic font-serif">
+            «Permanece en silencio y reconoce que Tú eres Dios.»
+          </div>
+        </div>
+
+        <!-- Controles de Sesión -->
+        <div class="flex items-center justify-center space-x-3 pt-2">
+          <button id="silence-start-btn" onclick="toggleSilenceSession()" class="px-8 py-3 bg-gradient-to-r from-stellar-600 to-amber-600 hover:from-stellar-500 text-void-950 font-cinzel font-bold rounded-2xl text-xs uppercase tracking-widest shadow-lg">
+            Iniciar Reposo
+          </button>
+          
+          <button onclick="toggleHarmonicDrone()" id="timer-drone-btn" class="p-3 border border-stellar-500/40 rounded-2xl bg-void-850 hover:bg-void-800 text-stellar-300 text-xs font-cinzel" title="Dron armónico 108 Hz">
+            🪷 Dron
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 5: DIARIO DE LA CONSCIENCIA TESTIGO (SĀKṢĪ PATRA) ================= -->
+    <section id="view-journal" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-stellar-400 font-cinzel font-bold">Sākṣī Patra · Registro de Lucidez</span>
+        <h2 class="text-3xl font-serif font-bold text-pearl-100">El Diario de la Consciencia Testigo</h2>
+        <p class="text-sm text-pearl-300">
+          Inmortaliza los momentos en que el personaje imaginario se rinde y recuerdas la inmutable Presencia que eres.
+        </p>
+      </div>
+
+      <!-- Formulario para Registrar -->
+      <div class="advaita-card rounded-3xl p-6 sm:p-8 space-y-5">
+        <h3 class="font-cinzel text-base font-bold border-b border-void-700 pb-3 flex items-center justify-between text-pearl-100">
+          <span>Nueva Entrada de Indagación</span>
+          <span class="text-xs font-sans font-normal text-pearl-400" id="journal-current-date">Hoy</span>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs uppercase font-cinzel font-bold text-pearl-300 mb-1">Suceso o Pensamiento Atestiguado</label>
+            <input type="text" id="sakshi-event" placeholder="Ej: Discusión acalorada / Momento de soledad..." class="w-full bg-void-850 border border-void-700 rounded-xl px-4 py-2.5 text-sm text-pearl-100 focus:outline-none focus:border-stellar-500">
+          </div>
+          <div>
+            <label class="block text-xs uppercase font-cinzel font-bold text-pearl-300 mb-1">Vía de Reconocimiento</label>
+            <select id="sakshi-category" class="w-full bg-void-850 border border-void-700 rounded-xl px-3 py-2.5 text-sm text-pearl-100 focus:outline-none focus:border-stellar-500">
+              <option value="Ātma-Vicāra">Ātma-Vicāra (Indagación: ¿Quién soy yo?)</option>
+              <option value="Neti Neti">Neti Neti (Descarte de objetos mentales)</option>
+              <option value="Dṛg-Dṛśya">Dṛg-Dṛśya (Vidente vs. Visto)</option>
+              <option value="Sahaja Samādhi">Sahaja Samādhi (Naturalidad en la acción)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs uppercase font-cinzel font-bold text-stellar-400 mb-1">Reconocimiento Lúcido (El Espacio del Testigo)</label>
+          <textarea id="sakshi-insight" rows="3" placeholder="¿Cómo se disolvió la identificación? Describe el silencio previo que atestiguó el hecho sin ser herido..." class="w-full bg-void-850 border border-void-700 rounded-xl p-3 text-sm text-pearl-100 focus:outline-none focus:border-stellar-500 resize-none"></textarea>
+        </div>
+
+        <div class="flex justify-end pt-2">
+          <button onclick="saveSakshiEntryManual()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-stellar-600 to-amber-600 hover:from-stellar-500 text-void-950 font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg">
+            Consagrar en el Sākṣī Patra
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Filtros y Descarga -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4">
+        <div class="flex items-center space-x-2 w-full sm:w-auto">
+          <input type="text" id="sakshi-search-input" oninput="renderSakshiEntries()" placeholder="Buscar en reconocimientos..." class="bg-void-850 border border-void-700 rounded-xl px-4 py-2 text-xs text-pearl-100 focus:outline-none focus:border-stellar-500 w-full sm:w-64">
+        </div>
+        <div class="flex items-center space-x-2 w-full sm:w-auto justify-end">
+          <button onclick="exportSakshiJSON()" class="px-3 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300 hover:text-stellar-400 hover:bg-void-850">
+            Exportar JSON
+          </button>
+          <button onclick="exportSakshiTXT()" class="px-3 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300 hover:text-stellar-400 hover:bg-void-850">
+            Descargar Texto
+          </button>
+        </div>
+      </div>
+
+      <!-- Lista Histórica de Entradas -->
+      <div id="sakshi-entries-container" class="space-y-4">
+        <!-- Rellenado por JavaScript -->
+      </div>
+
+    </section>
+
+    <!-- ================= SECCIÓN 6: COMPENDIO DE LA NO-DUALIDAD ================= -->
+    <section id="view-compendium" class="view-content hidden space-y-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-2">
+        <span class="text-xs uppercase tracking-widest text-stellar-400 font-cinzel font-bold">Upaniṣads · Gītās · Maestros</span>
+        <h2 class="text-3xl font-serif font-bold text-pearl-100">Compendio de la No-Dualidad</h2>
+        <p class="text-sm text-pearl-300">
+          Los grandes aforismos y enseñanzas directas que desmantelan el espejismo de la separación.
+        </p>
+      </div>
+
+      <!-- Filtros por Colección -->
+      <div class="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
+        <button onclick="filterCompendium('all')" class="advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-stellar-500/40 bg-stellar-500 text-void-950" data-cat="all">Todos</button>
+        <button onclick="filterCompendium('mahavakya')" class="advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-void-700 text-pearl-300 hover:border-stellar-500/40" data-cat="mahavakya">Los 4 Mahāvākyas</button>
+        <button onclick="filterCompendium('astavakra')" class="advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-void-700 text-pearl-300 hover:border-stellar-500/40" data-cat="astavakra">Aṣṭāvakra Gītā</button>
+        <button onclick="filterCompendium('ramana')" class="advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-void-700 text-pearl-300 hover:border-stellar-500/40" data-cat="ramana">Ramana Maharshi</button>
+        <button onclick="filterCompendium('nisargadatta')" class="advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-void-700 text-pearl-300 hover:border-stellar-500/40" data-cat="nisargadatta">Nisargadatta Maharaj</button>
+        <button onclick="filterCompendium('sankara')" class="advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-void-700 text-pearl-300 hover:border-stellar-500/40" data-cat="sankara">Śaṅkarācārya</button>
+      </div>
+
+      <!-- Buscador en tiempo real -->
+      <div class="max-w-md mx-auto">
+        <input type="text" id="comp-search-box" oninput="searchCompendium()" placeholder="Buscar por sánscrito, fuente o enseñanza..." class="w-full bg-void-850 border border-void-700 rounded-2xl px-4 py-2.5 text-xs text-pearl-100 focus:outline-none focus:border-stellar-500">
+      </div>
+
+      <!-- Cuadrícula de Aforismos -->
+      <div id="compendium-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-4">
+        <!-- Renderizado dinámico -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= MODAL DE NOTA RÁPIDA ================= -->
+  <div id="modal-note" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+    <div class="advaita-card w-full max-w-lg rounded-3xl p-6 shadow-2xl space-y-4 border border-stellar-500/40">
+      <div class="flex items-center justify-between border-b border-void-700 pb-3">
+        <h3 class="font-cinzel text-base font-bold text-pearl-100">Anotar al Testigo</h3>
+        <button onclick="closeNoteModal()" class="text-pearl-400 hover:text-stellar-400 text-xl font-bold">&times;</button>
+      </div>
+      <p class="text-xs text-pearl-300" id="modal-pointer-ref">
+        Consagrado al aforismo activo.
+      </p>
+      <textarea id="modal-note-text" rows="4" class="w-full bg-void-850 border border-void-700 rounded-xl p-3 text-sm text-pearl-100 focus:outline-none focus:border-stellar-500 resize-none" placeholder="¿Qué verdad ha desvelado la Consciencia en este instante?"></textarea>
+      
+      <div class="flex justify-end space-x-2 pt-2">
+        <button onclick="closeNoteModal()" class="px-4 py-2 border border-void-700 rounded-xl text-xs font-cinzel text-pearl-300">Cancelar</button>
+        <button onclick="saveModalNote()" class="px-5 py-2 bg-stellar-600 hover:bg-stellar-500 text-void-950 font-cinzel font-bold rounded-xl text-xs uppercase tracking-wider">Guardar Reconocimiento</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PIE DE PÁGINA ================= -->
+  <footer class="border-t border-void-800 mt-12 py-8 text-center text-xs text-pearl-400">
+    <div class="max-w-4xl mx-auto px-4 space-y-2">
+      <div class="font-serif italic text-base text-stellar-300">
+        «Tú eres la Consciencia inmutable, libre y pura; reposa en tu propia dicha.» — Aṣṭāvakra Gītā 1.15
+      </div>
+      <p class="text-[11px] text-pearl-400 font-cinzel">ADVAITA · ĀTMA-VICĀRA · Vol. VI de la Hexalogía Contemplativa · Libre, sin dependencias y offline.</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPT: LÓGICA & SÍNTESIS NATIVA WEB AUDIO API ================= -->
+  <script>
+    /* =====================================================================
+       BASE DE DATOS NO-DUAL (MAHĀVĀKYAS & MAESTROS)
+       ===================================================================== */
+    const ADVAITA_DATA = [
+      {
+        id: "tat-tvam-asi",
+        source: "Chāndogya Upaniṣad 6.8.7",
+        category: "mahavakya",
+        type: "Mahāvākya Supremo (Sāma Veda)",
+        sanskrit: "tat tvam asi |",
+        phonetic: "tat tvam asi · [ Tú eres Eso ]",
+        translation: "Aquello que es la Realidad Suprema, sutil e infinita, que sostiene los mundos: Eso eres tú.",
+        insight: "No busques a Dios fuera ni intentes convertirte en alguien especial. El cuerpo y la mente cambian sin cesar; tú eres el Espacio Consciente e inmutable en el que ocurren.",
+        practice: "Cierra los ojos durante 30 segundos. Pregúntate: «¿Quién es consciente del parloteo mental ahora mismo?». Permanece en el silencio que atestigua, sin añadir una sola palabra."
+      },
+      {
+        id: "aham-brahmasmi",
+        source: "Bṛhadāraṇyaka Upaniṣad 1.4.10",
+        category: "mahavakya",
+        type: "Mahāvākya (Yajur Veda)",
+        sanskrit: "ahaṁ brahmāsmi |",
+        phonetic: "aham brahmaasmi · [ Yo soy Brahman ]",
+        translation: "En verdad, mi verdadera naturaleza es la Totalidad Consciente, ilimitada y libre de ataduras.",
+        insight: "Decir 'Ahaṁ Brahmāsmi' no es arrogancia del ego, sino la muerte de la pequeña identidad separada. El 'yo' que sufre es una etiqueta aprendida; la Consciencia que ilumina el cuerpo es una con el Todo.",
+        practice: "Ante una sensación de soledad o fragilidad hoy, recuerda: «El cuerpo es un punto de percepción, pero Yo soy la luz que lo atestigua». Descansa en esa inmensidad."
+      },
+      {
+        id: "prajnanam-brahma",
+        source: "Aitareya Upaniṣad 3.3",
+        category: "mahavakya",
+        type: "Mahāvākya (Ṛg Veda)",
+        sanskrit: "prajñānaṁ brahma |",
+        phonetic: "prajnyaanam brahma · [ La Consciencia es la Realidad ]",
+        translation: "La Consciencia pura es el fundamento supremo de todo lo existente.",
+        insight: "Cualquier cosa que puedas nombrar, tocar o pensar requiere de la Consciencia para ser experimentada. La Consciencia no es una propiedad del cerebro: es la pantalla en la que el universo entero se proyecta.",
+        practice: "Mira un objeto a tu alrededor. Nota que su existencia depende de que tú seas consciente de él. Reconoce la primacía absoluta de la Consciencia sobre la materia."
+      },
+      {
+        id: "ayam-atma-brahma",
+        source: "Māṇḍūkya Upaniṣad 2",
+        category: "mahavakya",
+        type: "Mahāvākya (Atharva Veda)",
+        sanskrit: "ayam ātmā brahma |",
+        phonetic: "ayam aatmaa brahma · [ Este Sí Mismo es Brahman ]",
+        translation: "Este núcleo íntimo que percibe en ti (el Testigo de vigilia, sueño y sueño profundo) es la Realidad Cósmica.",
+        insight: "No hay dos divinidades: la que sostiene las galaxias y la que atestigua este parpadeo tuyo son la misma luz. El Sí Mismo interior no tiene fronteras.",
+        practice: "En el momento de ir a dormir, nota quién es consciente de la transición hacia el silencio. Ese testigo que nunca duerme es tu verdadero Ser."
+      },
+      {
+        id: "astavakra-1-15",
+        source: "Aṣṭāvakra Gītā 1.15",
+        category: "astavakra",
+        type: "El Diálogo de la Liberación",
+        sanskrit: "śuddho 'si cetano 'sy ātmā mā trasyasi kathaṁcana |",
+        phonetic: "shuddho 'si chetano 'sy aatmaa maa trasyasi kathanchana",
+        translation: "Eres puro, eres Consciencia despierta, eres el Sí Mismo inmutable. ¿Por qué tiemblas ante los fantasmas de tu propia mente?",
+        insight: "El rey Janaka se liberó en un instante al comprender que nunca estuvo cautivo. El cautiverio es solo una creencia errónea: creer que eres el manojo de pensamientos y miedos que tu mente produce.",
+        practice: "Cuando te sientas culpable o imperfecto hoy, di tajantemente: «Esos son juicios de la mente; yo soy el Testigo incontaminado en el que surgen»."
+      },
+      {
+        id: "ramana-who-am-i",
+        source: "Bhagavān Ramana Maharshi",
+        category: "ramana",
+        type: "Upadeśa · La Indagación Directa",
+        sanskrit: "«El pensamiento 'yo soy el cuerpo' es el primer error. Al indagar en su origen, el ego se extingue.»",
+        phonetic: "[ Nan Yar? · ¿Quién soy yo? ]",
+        translation: "Todo el sufrimiento del mundo descansa sobre el falso supuesto de que eres un cuerpo con un nombre. Indaga quién eres antes de pensar y hallarás la paz que nunca perdiste.",
+        insight: "Ramana no propone una filosofía compleja ni ejercicios gimnásticos. Solo una pregunta incisiva: «¿Quién es el que sufre?». Cuando buscas al sufriente, descubres que no hay nadie allí: solo Presencia.",
+        practice: "Ante cualquier queja mental hoy, detente de inmediato y lanza la flecha hacia adentro: «¿A quién le ocurre esto? A mí. ¿Quién soy yo?». Siente el silencio posterior."
+      },
+      {
+        id: "nisargadatta-witness",
+        source: "Śrī Nisargadatta Maharaj",
+        category: "nisargadatta",
+        type: "I Am That · Yo Soy Eso",
+        sanskrit: "«La sabiduría me dice que no soy nada; el amor me dice que lo soy todo. Entre ambos fluye mi vida.»",
+        phonetic: "[ Maharaj · Conversaciones de No-Dualidad ]",
+        translation: "Como objeto o persona no existo por cuenta propia; como Consciencia pura que ilumina todo, soy el universo entero.",
+        insight: "Nisargadatta insistía en aferrarse al sentido de 'Yo Soy' previo a los conceptos. Antes de saber que eres hombre, mujer, rico o pobre, simplemente Eres.",
+        practice: "Quédate durante un minuto en la pura certeza de existir ('Yo Soy') sin añadirle ningún adjetivo: ni cansado, ni contento, ni ocupado. Solo existir."
+      },
+      {
+        id: "sankara-viveka",
+        source: "Śaṅkarācārya · Vivekacūḍāmaṇi",
+        category: "sankara",
+        type: "La Joya Suprema del Discernimiento",
+        sanskrit: "jñānena nirmalaṁ kṛtvā manaḥ samādhau sthirībhavet |",
+        phonetic: "jnyaanena nirmalam kritvaa manah samaadhau sthireebhavet",
+        translation: "Purificando la mente mediante el recto discernimiento, uno se establece en la quietud inquebrantable de la no-dualidad.",
+        insight: "El discernimiento (*Viveka*) es la espada que corta la raíz de la ilusión. Distinguir con precisión quirúrgica entre lo efímero (lo visto) y lo eterno (el vidente).",
+        practice: "Al mirar una fotografía antigua tuya, nota que el cuerpo de esa foto ya murió y la mente de entonces ya cambió; sin embargo, el 'Darse Cuenta' que mira hoy es exactamente el mismo."
+      }
+    ];
+
+    /* =====================================================================
+       ESTADO Y PERSISTENCIA (LOCALSTORAGE)
+       ===================================================================== */
+    const STORAGE_KEY_JOURNAL = 'advaita_sakshi_journal_v1';
+    const STORAGE_KEY_STREAK = 'advaita_streak_v1';
+    const STORAGE_KEY_ACTIVE = 'advaita_active_pointer_v1';
+
+    let currentPointer = ADVAITA_DATA[0];
+    let sakshiEntries = [];
+    let practiceStreak = { count: 0, lastDate: null };
+    let currentCompFilter = 'all';
+
+    // Temporizador de silencio
+    let silenceTimer = null;
+    let silenceDurationMin = 5;
+    let silenceRemainingSec = 300;
+    let isSilenceRunning = false;
+
+    // Estado del Dron
+    let isDronePlaying = false;
+
+    function initApp() {
+      // Cargar racha
+      try {
+        const savedStreak = localStorage.getItem(STORAGE_KEY_STREAK);
+        if (savedStreak) practiceStreak = JSON.parse(savedStreak);
+      } catch (e) { console.error(e); }
+      updateStreakDisplay();
+
+      // Cargar diario
+      try {
+        const savedJournal = localStorage.getItem(STORAGE_KEY_JOURNAL);
+        if (savedJournal) sakshiEntries = JSON.parse(savedJournal);
+      } catch (e) { sakshiEntries = []; }
+      renderSakshiEntries();
+
+      // Cargar puntero activo
+      try {
+        const savedId = localStorage.getItem(STORAGE_KEY_ACTIVE);
+        if (savedId) {
+          const found = ADVAITA_DATA.find(p => p.id === savedId);
+          if (found) currentPointer = found;
+        } else {
+          const dayOfYear = Math.floor((new Date() - new Date(new Date().getFullYear(), 0, 0)) / (1000 * 60 * 60 * 24));
+          currentPointer = ADVAITA_DATA[dayOfYear % ADVAITA_DATA.length];
+        }
+      } catch (e) { currentPointer = ADVAITA_DATA[0]; }
+
+      renderCurrentPointer();
+      renderCompendium();
+
+      // Fecha en diario
+      const now = new Date();
+      document.getElementById('journal-current-date').textContent = now.toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' });
+    }
+
+    /* =====================================================================
+       NAVEGACIÓN ENTRE PESTAÑAS
+       ===================================================================== */
+    function switchTab(tabId) {
+      document.querySelectorAll('.view-content').forEach(view => view.classList.add('hidden'));
+      const activeView = document.getElementById(`view-${tabId}`);
+      if (activeView) activeView.classList.remove('hidden');
+
+      // Botones desktop
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('tab-active'));
+      const activeNav = document.getElementById(`nav-${tabId}`);
+      if (activeNav) activeNav.classList.add('tab-active');
+
+      // Botones móvil
+      document.querySelectorAll('[id^="mob-nav-"]').forEach(btn => btn.classList.remove('tab-active'));
+      const activeMobNav = document.getElementById(`mob-nav-${tabId}`);
+      if (activeMobNav) activeMobNav.classList.add('tab-active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* =====================================================================
+       NOTIFICACIÓN TOAST SUTIL
+       ===================================================================== */
+    let toastTimeout;
+    function showToast(msg, icon = '👁️') {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      document.getElementById('toast-icon').textContent = icon;
+
+      toast.classList.remove('opacity-0', 'translate-y-20', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-20', 'pointer-events-none');
+        toast.classList.remove('opacity-100', 'translate-y-0');
+      }, 3500);
+    }
+
+    /* =====================================================================
+       EL PUNTERO VIVO (MAHĀVĀKYA)
+       ===================================================================== */
+    function renderCurrentPointer() {
+      document.getElementById('daily-source-tag').textContent = currentPointer.source;
+      document.getElementById('daily-type-tag').textContent = currentPointer.type;
+      document.getElementById('daily-sanskrit').textContent = currentPointer.sanskrit;
+      document.getElementById('daily-phonetic').textContent = currentPointer.phonetic;
+      document.getElementById('daily-translation').textContent = `«${currentPointer.translation}»`;
+      document.getElementById('daily-insight').textContent = currentPointer.insight;
+      document.getElementById('daily-practice').textContent = currentPointer.practice;
+
+      try {
+        localStorage.setItem(STORAGE_KEY_ACTIVE, currentPointer.id);
+      } catch (e) {}
+      checkIfRecognizedToday();
+    }
+
+    function pickRandomPointer() {
+      const others = ADVAITA_DATA.filter(p => p.id !== currentPointer.id);
+      currentPointer = others[Math.floor(Math.random() * others.length)];
+      renderCurrentPointer();
+      playQuartzBell(528);
+      showToast(`Puntero evocado: ${currentPointer.source}`, '🏹');
+    }
+
+    function setPointerById(id) {
+      const found = ADVAITA_DATA.find(p => p.id === id);
+      if (found) {
+        currentPointer = found;
+        renderCurrentPointer();
+        switchTab('daily');
+        playQuartzBell(432);
+        showToast(`Puntero fijado para hoy: ${currentPointer.source}`, '👁️');
+      }
+    }
+
+    function checkIfRecognizedToday() {
+      const today = new Date().toISOString().split('T')[0];
+      const isRecognized = practiceStreak.lastDate === today;
+      const btn = document.getElementById('btn-mark-recognized');
+      const txt = document.getElementById('btn-recognized-text');
+
+      if (isRecognized) {
+        btn.classList.remove('from-stellar-600', 'to-amber-600');
+        btn.classList.add('from-void-800', 'to-void-700', 'text-stellar-300', 'border', 'border-stellar-500/40');
+        txt.textContent = 'Naturaleza reconocida hoy ✓';
+      } else {
+        btn.classList.add('from-stellar-600', 'to-amber-600');
+        btn.classList.remove('from-void-800', 'to-void-700', 'text-stellar-300', 'border', 'border-stellar-500/40');
+        txt.textContent = 'He reconocido mi naturaleza hoy';
+      }
+    }
+
+    function markRecognizedToday() {
+      const today = new Date().toISOString().split('T')[0];
+      if (practiceStreak.lastDate === today) {
+        showToast('Ya has sellado tu reconocimiento despierto hoy.', '👁️');
+        return;
+      }
+
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+      const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+      if (practiceStreak.lastDate === yesterdayStr) {
+        practiceStreak.count += 1;
+      } else {
+        practiceStreak.count = 1;
+      }
+
+      practiceStreak.lastDate = today;
+      try {
+        localStorage.setItem(STORAGE_KEY_STREAK, JSON.stringify(practiceStreak));
+      } catch (e) {}
+
+      updateStreakDisplay();
+      checkIfRecognizedToday();
+      playQuartzBell(528);
+      showToast('Chispa registrada: La Consciencia reposa en su propia luz.', '✨');
+    }
+
+    function updateStreakDisplay() {
+      const el = document.getElementById('streak-counter');
+      const c = practiceStreak.count || 0;
+      el.textContent = `${c} ${c === 1 ? 'chispa' : 'chispas'}`;
+    }
+
+    function sharePointerText() {
+      const txt = `*${currentPointer.source}*\n"${currentPointer.sanskrit}"\n\nSignificado:\n${currentPointer.translation}\n\nFlecha de la Indagación:\n${currentPointer.practice}\n\n— ADVAITA · ĀTMA-VICĀRA (El Reconocimiento del Sí Mismo)`;
+      copyToClipboardText(txt);
+      showToast('Aforismo copiado al portapapeles.', '📋');
+    }
+
+    function copyToClipboardText(str) {
+      const temp = document.createElement('textarea');
+      temp.value = str;
+      temp.style.position = 'fixed';
+      temp.style.left = '-9999px';
+      document.body.appendChild(temp);
+      temp.select();
+      try { document.execCommand('copy'); } catch (e) { console.error(e); }
+      document.body.removeChild(temp);
+    }
+
+    /* =====================================================================
+       LABORATORIO DE AUTO-INDAGACIÓN (ĀTMA-VICĀRA)
+       ===================================================================== */
+    let currentVicaraStep = 1;
+    let observedThoughtText = "";
+
+    function setVicaraStep(step) {
+      currentVicaraStep = step;
+      document.getElementById('vicara-step-1').classList.toggle('hidden', step !== 1);
+      document.getElementById('vicara-step-2').classList.toggle('hidden', step !== 2);
+      document.getElementById('vicara-step-3').classList.toggle('hidden', step !== 3);
+
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById(`vicara-step-btn-${i}`);
+        if (i === step) {
+          btn.className = "py-2 text-xs font-cinzel font-bold border-b-2 border-stellar-500 text-stellar-300";
+        } else {
+          btn.className = "py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400";
+        }
+      }
+    }
+
+    function setThoughtPreset(txt) {
+      document.getElementById('vicara-thought-input').value = txt;
+    }
+
+    function goToVicaraStep2() {
+      const val = document.getElementById('vicara-thought-input').value.trim();
+      if (!val) {
+        showToast('Escribe primero el pensamiento o inquietud que te ocupa.', '⚠️');
+        return;
+      }
+      observedThoughtText = val;
+      document.getElementById('vicara-observed-text').textContent = `«${val}»`;
+      playQuartzBell(324);
+      setVicaraStep(2);
+    }
+
+    function goToVicaraStep3() {
+      playQuartzBell(432);
+      setTimeout(() => playQuartzBell(648), 600);
+      setVicaraStep(3);
+    }
+
+    function saveVicaraEntryToJournal() {
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        event: "Ātma-Vicāra (Auto-Indagación Directa)",
+        category: "Ātma-Vicāra",
+        insight: `Pensamiento indagado: "${observedThoughtText}".\n\nAl preguntar "¿A quién le surge esto? -> A Mí -> ¿Quién soy yo?", el personaje se desvaneció y reposé en el silencio del Testigo Puro.`
+      };
+
+      sakshiEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(sakshiEntries));
+      } catch (e) {}
+
+      renderSakshiEntries();
+      playQuartzBell(528);
+      showToast('Reconocimiento consagrado en el Sākṣī Patra.', '📜');
+      resetVicara();
+      switchTab('journal');
+    }
+
+    function resetVicara() {
+      document.getElementById('vicara-thought-input').value = '';
+      observedThoughtText = '';
+      setVicaraStep(1);
+    }
+
+    /* =====================================================================
+       DṚG-DṚŚYA-VIVEKA (DISCRIMINACIÓN)
+       ===================================================================== */
+    let currentVivekaStep = 1;
+
+    function setVivekaStep(step) {
+      currentVivekaStep = step;
+      for (let i = 1; i <= 4; i++) {
+        const pane = document.getElementById(`viv-pane-${i}`);
+        const tab = document.getElementById(`viv-tab-${i}`);
+        if (pane) pane.classList.toggle('hidden', i !== step);
+        if (tab) {
+          if (i === step) {
+            tab.className = "py-2 text-xs font-cinzel font-bold border-b-2 border-stellar-500 text-stellar-300";
+          } else {
+            tab.className = "py-2 text-xs font-cinzel font-bold border-b-2 border-transparent text-pearl-400";
+          }
+        }
+      }
+      playQuartzBell(216 + step * 108);
+    }
+
+    function saveVivekaToJournal() {
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        event: "Discriminación Dṛg-Dṛśya-Viveka",
+        category: "Dṛg-Dṛśya",
+        insight: "He descartado el cuerpo, las sensaciones y el parloteo del ego mediante Neti-Neti. Solo queda la Presencia Consciente que los atestigua: Yo soy el Vidente Supremo (Brahman)."
+      };
+
+      sakshiEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(sakshiEntries));
+      } catch (e) {}
+
+      renderSakshiEntries();
+      playQuartzBell(528);
+      showToast('Discriminación consagrada en el diario.', '💎');
+      setVivekaStep(1);
+      switchTab('journal');
+    }
+
+    /* =====================================================================
+       EL REPOSO EN LA FUENTE (TEMPORIZADOR & SILENCIO)
+       ===================================================================== */
+    function setSilenceDuration(min) {
+      if (isSilenceRunning) toggleSilenceSession();
+      silenceDurationMin = min;
+      silenceRemainingSec = min * 60;
+      updateTimerDisplay();
+
+      document.querySelectorAll('.timer-pill').forEach(btn => {
+        btn.className = "timer-pill px-3 py-1.5 rounded-full border border-void-700 text-pearl-300 hover:border-stellar-400";
+      });
+      const activeBtn = document.getElementById(`timer-btn-${min}`);
+      if (activeBtn) {
+        activeBtn.className = "timer-pill px-3 py-1.5 rounded-full border border-stellar-500 bg-stellar-500/20 text-stellar-300 font-bold";
+      }
+    }
+
+    function updateTimerDisplay() {
+      const m = Math.floor(silenceRemainingSec / 60);
+      const s = silenceRemainingSec % 60;
+      document.getElementById('timer-display').textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function toggleSilenceSession() {
+      const btn = document.getElementById('silence-start-btn');
+      const label = document.getElementById('timer-state-label');
+      const orb = document.getElementById('silence-orb');
+
+      if (isSilenceRunning) {
+        clearInterval(silenceTimer);
+        isSilenceRunning = false;
+        btn.textContent = 'Iniciar Reposo';
+        btn.classList.remove('from-void-800', 'to-void-700', 'text-stellar-300');
+        btn.classList.add('from-stellar-600', 'to-amber-600', 'text-void-950');
+        label.textContent = 'En Pausa';
+        orb.style.transform = 'scale(1)';
+      } else {
+        isSilenceRunning = true;
+        btn.textContent = 'Detener Reposo';
+        btn.classList.add('from-void-800', 'to-void-700', 'text-stellar-300');
+        btn.classList.remove('from-stellar-600', 'to-amber-600', 'text-void-950');
+        label.textContent = 'Reposo Abisal';
+        orb.style.transform = 'scale(1.08)';
+
+        // Toque sagrado de campana de cuarzo al inicio
+        playQuartzBell(432);
+
+        silenceTimer = setInterval(() => {
+          if (silenceRemainingSec > 0) {
+            silenceRemainingSec--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(silenceTimer);
+            isSilenceRunning = false;
+            btn.textContent = 'Iniciar Reposo';
+            btn.classList.remove('from-void-800', 'to-void-700');
+            btn.classList.add('from-stellar-600', 'to-amber-600', 'text-void-950');
+            label.textContent = 'Completado';
+            orb.style.transform = 'scale(1)';
+
+            // Campana celestial final
+            playQuartzBell(528);
+            setTimeout(() => playQuartzBell(792), 700);
+            showToast('Sesión de silencio consumada en el Sí Mismo.', '🪷');
+            silenceRemainingSec = silenceDurationMin * 60;
+            updateTimerDisplay();
+          }
+        }, 1000);
+      }
+    }
+
+    /* =====================================================================
+       DIARIO DE LA CONSCIENCIA TESTIGO (SĀKṢĪ PATRA)
+       ===================================================================== */
+    function saveSakshiEntryManual() {
+      const event = document.getElementById('sakshi-event').value.trim();
+      const cat = document.getElementById('sakshi-category').value;
+      const insight = document.getElementById('sakshi-insight').value.trim();
+
+      if (!event && !insight) {
+        showToast('Escribe al menos una observación o reconocimiento.', '⚠️');
+        return;
+      }
+
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        event: event || 'Momento cotidiano de no-identificación',
+        category: cat,
+        insight: insight || 'He tomado distancia de la mente y he reposado como Consciencia Testigo inmóvil.'
+      };
+
+      sakshiEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(sakshiEntries));
+      } catch (e) {}
+
+      document.getElementById('sakshi-event').value = '';
+      document.getElementById('sakshi-insight').value = '';
+
+      renderSakshiEntries();
+      playQuartzBell(528);
+      showToast('Reconocimiento guardado en el Sākṣī Patra.', '📜');
+    }
+
+    function renderSakshiEntries() {
+      const container = document.getElementById('sakshi-entries-container');
+      const search = (document.getElementById('sakshi-search-input')?.value || '').toLowerCase();
+
+      const filtered = sakshiEntries.filter(item => {
+        return (
+          item.event.toLowerCase().includes(search) ||
+          item.category.toLowerCase().includes(search) ||
+          item.insight.toLowerCase().includes(search)
+        );
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 border border-dashed border-void-700 rounded-3xl p-8 advaita-card">
+            <div class="text-3xl mb-2 text-stellar-400/50">👁️</div>
+            <h4 class="font-cinzel text-base font-bold text-pearl-200">El Espejo está Despejado</h4>
+            <p class="text-xs text-pearl-400 max-w-sm mx-auto mt-1">
+              Aún no hay registros de reconocimiento. Utiliza el formulario o el Laboratorio Ātma-Vicāra para consagrar tus desidentificaciones.
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(item => {
+        const d = new Date(item.date);
+        const dateStr = d.toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+        return `
+          <div class="advaita-card rounded-2xl p-5 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-void-700/80 pb-2">
+              <div class="flex items-center space-x-2">
+                <span class="text-xs px-2.5 py-0.5 rounded-full bg-void-850 border border-stellar-500/30 text-stellar-300 font-cinzel font-semibold">${escapeHtml(item.category)}</span>
+              </div>
+              <div class="flex items-center space-x-2 text-xs text-pearl-400">
+                <span>${dateStr}</span>
+                <button onclick="deleteSakshiEntry('${item.id}')" class="hover:text-red-400 p-1" title="Retirar entrada">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="text-sm font-semibold text-pearl-100">
+              <span class="text-xs uppercase tracking-wider text-pearl-400 block font-normal font-cinzel">Suceso Atestiguado:</span>
+              ${escapeHtml(item.event)}
+            </div>
+
+            <div class="text-xs text-pearl-200 bg-void-850/90 p-4 rounded-xl border border-stellar-500/20 leading-relaxed font-serif text-sm italic">
+              ${escapeHtml(item.insight).replace(/\n/g, '<br>')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function deleteSakshiEntry(id) {
+      sakshiEntries = sakshiEntries.filter(e => e.id !== id);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(sakshiEntries));
+      } catch (e) {}
+      renderSakshiEntries();
+      showToast('Registro retirado del diario.');
+    }
+
+    function exportSakshiJSON() {
+      if (sakshiEntries.length === 0) {
+        showToast('No hay entradas para exportar.', 'ℹ️');
+        return;
+      }
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(sakshiEntries, null, 2));
+      const dl = document.createElement('a');
+      dl.setAttribute("href", dataStr);
+      dl.setAttribute("download", `advaita_sakshi_patra_${new Date().toISOString().split('T')[0]}.json`);
+      document.body.appendChild(dl);
+      dl.click();
+      dl.remove();
+      showToast('Archivo JSON descargado.', '💾');
+    }
+
+    function exportSakshiTXT() {
+      if (sakshiEntries.length === 0) {
+        showToast('No hay entradas para exportar.', 'ℹ️');
+        return;
+      }
+      let content = "=========================================================\n";
+      content += "  ADVAITA · SĀKṢĪ PATRA (EL REGISTRO DEL VIDENTE)\n";
+      content += "=========================================================\n\n";
+
+      sakshiEntries.forEach((e, idx) => {
+        content += `[Entrada ${idx + 1}] — ${new Date(e.date).toLocaleString()}\n`;
+        content += `Categoría: ${e.category}\n`;
+        content += `Suceso: ${e.event}\n`;
+        content += `Reconocimiento:\n${e.insight}\n`;
+        content += "---------------------------------------------------------\n\n";
+      });
+
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const dl = document.createElement('a');
+      dl.href = url;
+      dl.download = `advaita_sakshi_patra_${new Date().toISOString().split('T')[0]}.txt`;
+      document.body.appendChild(dl);
+      dl.click();
+      document.body.removeChild(dl);
+      URL.revokeObjectURL(url);
+      showToast('Registros descargados en texto plano.', '📄');
+    }
+
+    /* =====================================================================
+       COMPENDIO DE LA NO-DUALIDAD
+       ===================================================================== */
+    function filterCompendium(cat) {
+      currentCompFilter = cat;
+      document.querySelectorAll('.advaita-filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = "advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-stellar-500/40 bg-stellar-500 text-void-950";
+        } else {
+          btn.className = "advaita-filter-btn px-3 py-1.5 rounded-full text-xs font-cinzel font-semibold border border-void-700 text-pearl-300 hover:border-stellar-500/40";
+        }
+      });
+      renderCompendium();
+    }
+
+    function searchCompendium() {
+      renderCompendium();
+    }
+
+    function renderCompendium() {
+      const container = document.getElementById('compendium-grid');
+      const search = (document.getElementById('comp-search-box')?.value || '').toLowerCase();
+
+      const filtered = ADVAITA_DATA.filter(p => {
+        const matchesCat = currentCompFilter === 'all' || p.category === currentCompFilter;
+        const matchesSearch = p.source.toLowerCase().includes(search) ||
+                              p.sanskrit.toLowerCase().includes(search) ||
+                              p.translation.toLowerCase().includes(search) ||
+                              p.insight.toLowerCase().includes(search) ||
+                              p.practice.toLowerCase().includes(search);
+        return matchesCat && matchesSearch;
+      });
+
+      container.innerHTML = filtered.map(p => {
+        return `
+          <div class="advaita-card rounded-3xl p-6 flex flex-col justify-between space-y-4 border border-void-700 hover:border-stellar-500/50 transition">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-md font-cinzel text-xs font-bold bg-void-850 text-stellar-300 border border-stellar-500/30">
+                  ${escapeHtml(p.source)}
+                </span>
+                <span class="text-[10px] uppercase font-cinzel tracking-wider text-ether-300">
+                  ${escapeHtml(p.category)}
+                </span>
+              </div>
+
+              <h3 class="font-serif text-lg font-bold text-pearl-100 italic">
+                ${escapeHtml(p.sanskrit)}
+              </h3>
+              <p class="text-xs text-stellar-400 font-medium">
+                «${escapeHtml(p.translation)}»
+              </p>
+              <p class="text-xs text-pearl-300 leading-relaxed pt-1">
+                ${escapeHtml(p.insight)}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-void-700 flex items-center justify-between gap-2">
+              <div class="text-[11px] text-ether-300 truncate flex-1 font-medium">
+                👁️ <strong>Práctica:</strong> ${escapeHtml(p.practice)}
+              </div>
+              <button onclick="setPointerById('${p.id}')" class="px-3 py-1.5 rounded-xl bg-void-850 hover:bg-stellar-500 hover:text-void-950 text-xs font-cinzel font-semibold text-pearl-200 transition border border-void-700 hover:border-stellar-500">
+                Indagar hoy
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    /* =====================================================================
+       MODAL DE NOTA RÁPIDA
+       ===================================================================== */
+    function openNoteModal() {
+      document.getElementById('modal-pointer-ref').textContent = `Inspirado en ${currentPointer.source}: "${currentPointer.translation}"`;
+      document.getElementById('modal-note-text').value = '';
+      document.getElementById('modal-note').classList.remove('hidden');
+    }
+
+    function closeNoteModal() {
+      document.getElementById('modal-note').classList.add('hidden');
+    }
+
+    function saveModalNote() {
+      const val = document.getElementById('modal-note-text').value.trim();
+      if (!val) {
+        showToast('Escribe unas palabras para tu anotación.', '⚠️');
+        return;
+      }
+
+      const entry = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        event: `Contemplación: ${currentPointer.source}`,
+        category: "Ātma-Vicāra",
+        insight: val
+      };
+
+      sakshiEntries.unshift(entry);
+      try {
+        localStorage.setItem(STORAGE_KEY_JOURNAL, JSON.stringify(sakshiEntries));
+      } catch (e) {}
+
+      renderSakshiEntries();
+      closeNoteModal();
+      playQuartzBell(528);
+      showToast('Reconocimiento guardado en el Sākṣī Patra.', '👁️');
+    }
+
+    /* =====================================================================
+       SÍNTESIS NATIVA WEB AUDIO API (DRON 108 HZ & CUENCO DE CUARZO)
+       ===================================================================== */
+    let audioCtx = null;
+    let droneOscillators = [];
+    let droneGain = null;
+    let droneLfo = null;
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioClass = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioClass();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // Cuenco de cuarzo / campana no-dual pura
+    function playQuartzBell(freq = 432) {
+      try {
+        initAudioContext();
+        const now = audioCtx.currentTime;
+
+        const partials = [
+          { f: freq * 1.0, g: 0.28, d: 5.5 },
+          { f: freq * 2.76, g: 0.12, d: 3.8 },
+          { f: freq * 5.40, g: 0.05, d: 2.0 }
+        ];
+
+        partials.forEach(p => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(p.f, now);
+          osc.frequency.linearRampToValueAtTime(p.f + 0.3, now + p.d);
+
+          gain.gain.setValueAtTime(0, now);
+          gain.gain.linearRampToValueAtTime(p.g, now + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + p.d);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(now);
+          osc.stop(now + p.d);
+        });
+      } catch (e) {
+        console.warn('Audio contextual restringido por navegador:', e);
+      }
+    }
+
+    // Dron armónico continuo basado en 108 Hz con sobretonos puros
+    function toggleHarmonicDrone() {
+      initAudioContext();
+      isDronePlaying = !isDronePlaying;
+
+      const headerBtn = document.getElementById('drone-btn');
+      const headerIcon = document.getElementById('drone-icon');
+      const headerText = document.getElementById('drone-btn-text');
+      const timerBtn = document.getElementById('timer-drone-btn');
+
+      if (isDronePlaying) {
+        startDrone();
+        headerBtn.classList.add('bg-stellar-500/20', 'border-stellar-400');
+        if (timerBtn) timerBtn.classList.add('bg-stellar-500/20', 'text-stellar-300');
+        headerIcon.textContent = '🔊';
+        headerText.textContent = 'Pausar Dron';
+        showToast('Dron armónico 108 Hz activado.', '🪷');
+      } else {
+        stopDrone();
+        headerBtn.classList.remove('bg-stellar-500/20', 'border-stellar-400');
+        if (timerBtn) timerBtn.classList.remove('bg-stellar-500/20', 'text-stellar-300');
+        headerIcon.textContent = '🪷';
+        headerText.textContent = 'Dron 108Hz';
+        showToast('Dron pausado.');
+      }
+    }
+
+    function startDrone() {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+
+      // Armónicos puros basados en 108 Hz (108, 216, 324, 432 Hz)
+      const harmonics = [
+        { f: 108.0, detune: -0.8, type: 'sine', gain: 0.16 },
+        { f: 108.0, detune: +0.8, type: 'sine', gain: 0.16 },
+        { f: 216.0, detune: -0.4, type: 'sine', gain: 0.10 },
+        { f: 324.0, detune: +0.5, type: 'sine', gain: 0.06 },
+        { f: 432.0, detune: 0, type: 'sine', gain: 0.08 }
+      ];
+
+      // Filtro de seda para calidez abisal
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(550, now);
+
+      // LFO para marea respiratoria del dron
+      droneLfo = audioCtx.createOscillator();
+      const lfoGain = audioCtx.createGain();
+      droneLfo.frequency.setValueAtTime(0.2, now); // Ciclo lento de 5 segundos
+      lfoGain.gain.setValueAtTime(0.04, now);
+      droneLfo.connect(lfoGain);
+      droneLfo.start(now);
+
+      droneGain = audioCtx.createGain();
+      droneGain.gain.setValueAtTime(0, now);
+      droneGain.gain.linearRampToValueAtTime(0.28, now + 2.0);
+
+      droneOscillators = [];
+
+      harmonics.forEach(h => {
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+
+        osc.type = h.type;
+        osc.frequency.setValueAtTime(h.f, now);
+        osc.detune.setValueAtTime(h.detune, now);
+
+        g.gain.setValueAtTime(h.gain, now);
+
+        // Modular con LFO
+        lfoGain.connect(g.gain);
+
+        osc.connect(g);
+        g.connect(filter);
+
+        osc.start(now);
+        droneOscillators.push(osc);
+      });
+
+      filter.connect(droneGain);
+      droneGain.connect(audioCtx.destination);
+    }
+
+    function stopDrone() {
+      if (!audioCtx || !droneGain) return;
+      const now = audioCtx.currentTime;
+      droneGain.gain.linearRampToValueAtTime(0.0001, now + 1.0);
+      setTimeout(() => {
+        droneOscillators.forEach(osc => {
+          try { osc.stop(); } catch (e) {}
+        });
+        if (droneLfo) {
+          try { droneLfo.stop(); } catch (e) {}
+        }
+        droneOscillators = [];
+        droneLfo = null;
+        droneGain = null;
+      }, 1050);
+    }
+
+    /* =====================================================================
+       UTILIDADES GENERALES
+       ===================================================================== */
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initApp();
+      document.getElementById('nav-daily')?.classList.add('tab-active');
+      document.getElementById('mob-nav-daily')?.classList.add('tab-active');
+    });
+  </script>
+</body>
+</html>
